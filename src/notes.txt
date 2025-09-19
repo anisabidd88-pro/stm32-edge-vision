@@ -1,0 +1,8 @@
+Developer notes / checklist:
+- Replace SystemClock_Config and MX_* functions with CubeIDE generated ones (or copy them into project).
+- Implement real camera SCCB init and sensor register writes for your specific camera.
+- Configure DCMI + DMA in CubeMX to enable double-buffer mode and link the IRQ to on_frame_captured.
+- When integrating TFLM:
+  * Add TFLM sources or use STM32Cube AI / X-CUBE-MODELS if available.
+  * Prefer CMSIS-NN optimized ops for speed on Cortex-M7.
+  * Measure RAM usage and increase tensor_arena accordingly.
